@@ -8,7 +8,7 @@ module.exports = {
       {
         name: "Actions",
         include: [
-          "src/components/Authorized.jsx"
+          "src/components/HeaderDropdown/index.jsx"
         ]
       }
     ]
