@@ -15,17 +15,41 @@
 #           command: ./node_modules/@uxpin/merge-cli/bin/uxpin-merge push --webpack-config ./webpack.config.js --wrapper ./src/Wrapper/UXPinWrapper.js
 
 
+#  version: 2
+#  jobs:
+#    build:
+#      docker:
+#        - image: circleci/ruby:2.4.1
+#      steps:
+#        - checkout
+#        - run: echo "A first hello"
+#    build:
+#      docker:
+#        - image: circleci/ruby:2.4.1
+#      steps:
+#        - checkout
+#        - run: echo "A first hello"
+
+
  version: 2
  jobs:
-   build:
+   one:
      docker:
        - image: circleci/ruby:2.4.1
      steps:
        - checkout
        - run: echo "A first hello"
-   build:
+       - run: sleep 25
+   two:
      docker:
        - image: circleci/ruby:2.4.1
      steps:
        - checkout
-       - run: echo "A first hello"
+       - run: echo "A more familiar hi"
+       - run: sleep 15
+ workflows:
+   version: 2
+   one_and_two:
+     jobs:
+       - one
+       - two
