@@ -1,15 +1,31 @@
-version: 2
+# version: 2
 
-jobs:
-  build:
-    working_directory: ~/tmp
-    docker:
-      - image: circleci/node:10.15-stretch-browsers
-    steps:
-      - checkout
-      - run:
-          name: "Install dependencies"
-          command: npm install
-      - run:
-          name: 'Push to UXPin'
-          command: ./node_modules/@uxpin/merge-cli/bin/uxpin-merge push --webpack-config ./webpack.config.js --wrapper ./src/Wrapper/UXPinWrapper.js
+# jobs:
+#   build:
+#     working_directory: ~/tmp
+#     docker:
+#       - image: circleci/node:10.15-stretch-browsers
+#     steps:
+#       - checkout
+#       - run:
+#           name: "Install dependencies"
+#           command: npm install
+#       - run:
+#           name: 'Push to UXPin'
+#           command: ./node_modules/@uxpin/merge-cli/bin/uxpin-merge push --webpack-config ./webpack.config.js --wrapper ./src/Wrapper/UXPinWrapper.js
+
+
+ version: 2
+ jobs:
+   build:
+     docker:
+       - image: circleci/ruby:2.4.1
+     steps:
+       - checkout
+       - run: echo "A first hello"
+   build:
+     docker:
+       - image: circleci/ruby:2.4.1
+     steps:
+       - checkout
+       - run: echo "A first hello"
