@@ -2,10 +2,6 @@ module.exports = {
   components: {
     categories: [
       {
-        name: "General",
-        include: ["src/Icon/Icon.js", "src/Typography/Typography.js"]
-      },
-      {
         name: "Actions",
         include: [
           "src/components/HeaderDropdown/index.jsx"
